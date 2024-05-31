@@ -5,9 +5,7 @@ import Nav from "@/Components/Nav";
 import { ModelContext, UserContextProvider, useUserContext } from '@/app/context/userContext';
 import { useContext, useEffect } from "react";
 import fetchUser from "@/Components/getUserData";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import TestPage from "./test/page";
+
 const inter = Inter({ subsets: ["latin"] });
 
 function UserFetcher() {
@@ -26,7 +24,7 @@ function UserFetcher() {
     getApi();
   }, []);
 
-  return null; // This component doesn't render anything
+  return null; 
 }
 
 
@@ -38,15 +36,9 @@ export default function RootLayout({
 
   return (
     <UserContextProvider>
-    <html lang="en">
-      <body className={inter.className}>
         <UserFetcher />
         <Nav />
-        <TestPage />
         {children}
-        <ToastContainer />
-      </body>
-    </html>
     </UserContextProvider>
   );
 }
