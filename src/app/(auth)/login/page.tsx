@@ -41,7 +41,7 @@ const Login = () => {
             formik.resetForm();
             router.push("/dashboard");
           } else {
-            alert("Login failed!");
+            toast.error("Login Failed");
           }
         });
       } catch (error: any) {

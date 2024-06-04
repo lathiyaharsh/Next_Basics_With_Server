@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
       const cookieStore = cookies();
       cookies().set('session', token, {
         httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
+        secure: secret ,
         maxAge: 60 * 60 * 24 * 7, // One week
         path: '/',
       })
